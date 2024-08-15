@@ -2,7 +2,7 @@
 
 SHELL := /bin/bash
 
-azdo-agent:
+azdo-agent-terratest:
 	echo "Calling azdo-agent"
 	terraform init
 	terraform plan
