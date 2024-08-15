@@ -70,7 +70,7 @@ jobs:
           terraform_version: 1.0.11
           terraform_wrapper: false
       - name: 'Install Go Modules'
-        working-directory: terratest
+        #working-directory: terratest
         run: go mod download
       - name: 'Run Terratest'
         #working-directory: terratest
