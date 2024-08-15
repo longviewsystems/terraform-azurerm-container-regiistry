@@ -1,6 +1,6 @@
-#.ONESHELL:
+.ONESHELL:
 
-SHELL := /bin/bash
+SHELL = /bin/bash
 
 azdo-agent-terratest:
 	echo "Calling azdo-agent"
