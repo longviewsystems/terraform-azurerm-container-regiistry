@@ -7,7 +7,6 @@ azdo-agent:
 	terraform init
 	terraform plan 
 	terraform apply -auto-approve
-destroy:
 	terraform destroy -auto-approve
 clean:
 	@find . -name terraform.tfstate -type f -exec rm -rf {} +
