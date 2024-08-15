@@ -1,1 +1,1 @@
-This Terraform module provisions a Azure Container Registery .
+Azure container Registry
