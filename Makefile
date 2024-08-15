@@ -2,11 +2,11 @@
 
 SHELL = /bin/bash
 
-azdo-agent-terratest:
+azdo-agent:
 	echo "Calling azdo-agent"
-	cd .. && terraform init
-	cd .. && terraform plan 
-	cd .. && terraform apply -auto-approve
+	terraform init
+	terraform plan 
+	terraform apply -auto-approve
 destroy:
 	terraform destroy -auto-approve
 clean:
