@@ -57,6 +57,7 @@ variable "acr_name" {
 
 variable "acr_sku" {
   description = "SKU of the Azure Container Registry"
+  type        = string
   default     = "Premium"
 
   validation {

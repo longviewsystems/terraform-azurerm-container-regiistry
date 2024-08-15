@@ -6,9 +6,9 @@ terraform {
     azurerm = {
       version = "~> 2.90.0"
     }
-    azuread = {
-      version = "~> 1.6.0"
-    }
+    #azuread = {
+     # version = "~> 1.6.0"
+    #}
   }
 }
 
