@@ -43,9 +43,10 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_app_configuration_name"></a> [app\_configuration\_name](#input\_app\_configuration\_name) | Name of the App Configuration | `string` | n/a | yes |
+| <a name="input_acr__name"></a> [acr_name](#input\_acr\_name) | Name of the Azure Container Registry | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | Location used to deploy the resources | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group name | `string` | n/a | yes |
+| <a name="input_acr_private_endpoint_vnet_name"></a> [acr_private_endpoint_vnet_name](#input\acr_private_endpoint_vnet_name) | Name of the virtual network where ACR private endpoint should be provisioned | `string` | n/a| yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to be assigned to the resources | `map(string)` | `{}` | no |
 
 ## Outputs
@@ -53,7 +54,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_endpoint"></a> [ACR with private endpoint](#output\_endpoint) | Name of the App Configuration |
-| <a name="output_id"></a> [id](#output\_id) | ID of the App Configuration |
+
 <!-- END_TF_DOCS -->    
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
