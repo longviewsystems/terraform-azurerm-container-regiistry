@@ -53,7 +53,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_endpoint"></a> [ACR with private endpoint](#output\_endpoint) | Name of the App Configuration |
+| <a name="acr_private_endpoint"></a> [ACR with private endpoint](#output\_endpoint) | ACR with private endpoint |
 
 <!-- END_TF_DOCS -->    
 
