@@ -49,7 +49,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "acr_private_dns_zone_v
   tags                  = var.tags
 }
 
-# Create azure private endpoint
+# Create Azure private endpoint
 resource "azurerm_private_endpoint" "acr_private_endpoint" {
   name                = "${var.acr_name}-private-endpoint"
   resource_group_name = azurerm_resource_group.acr_resource_group.name
