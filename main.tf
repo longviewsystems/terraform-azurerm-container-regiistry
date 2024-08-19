@@ -23,7 +23,7 @@ resource "azurerm_subnet" "acr_private_endpoint_subnet" {
   enforce_private_link_endpoint_network_policies = true
 
 }
-# Create azure container registry
+# Create azure container registry.
 resource "azurerm_container_registry" "acr" {
   name                          = var.acr_name
   location                      = var.location
