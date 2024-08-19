@@ -3,7 +3,8 @@ name: 'CI trigger for testing, versioning, and tagging'
 on:
   push:
     branches:
-      - main
+      - dev
+      - feature
     paths-ignore:
       - '**.md'
       - '**.sh'
