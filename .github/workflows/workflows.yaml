@@ -71,10 +71,10 @@ jobs:
           terraform_version: 1.0.11
           terraform_wrapper: false
       - name: 'Install Go Modules'
-        #working-directory: terratest
+        working-directory: test
         run: go mod download
       - name: 'Run Terratest'
-        #working-directory: terratest
+        working-directory: test
         run: make azdo-agent
         env:
           ARM_SUBSCRIPTION_ID: ${{ secrets.SUB_ID_SUB_LVS_CMP_DEV }}

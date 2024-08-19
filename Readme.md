@@ -3,7 +3,7 @@ This Terraform module provisions an Azure Container Registry (ACR) with private 
 
 
 
-Functionality Supported:
+Functionality Supported :
 - Create a ACR with Private endpoints
 - Test with Terratest
 - Generate README.md pdf
