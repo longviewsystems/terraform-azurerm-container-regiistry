@@ -12,7 +12,7 @@ func TestTerraformAzureACR(t *testing.T) {
 
 	// Define Terraform options
 	terraformOptions := &terraform.Options{
-		TerraformDir: "../../tf-code-accr",
+		TerraformDir: "../",
 	}
 
 	// Clean up resources with "terraform destroy" at the end of the test.
