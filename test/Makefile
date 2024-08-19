@@ -6,8 +6,8 @@ azdo-agent:
 	echo "Calling azdo-agent"
 	terraform -chdir=../ init 
 	terraform -chdir=../ plan
-	terraform -auto-approve -chdir=../ apply
-	terraform -auto-approve -chdir=../ destroy
+	terraform -chdir=../ apply -auto-approve 
+	terraform -chdir=../ destroy -auto-approve 
 clean:
 	@find . -name terraform.tfstate -type f -exec rm -rf {} +
 	@find . -name terraform.tfstate.backup -type f -exec rm -rf {} +
