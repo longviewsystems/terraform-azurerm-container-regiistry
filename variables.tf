@@ -31,6 +31,12 @@ variable "public_network_access_enabled" {
   default     = true
 }
 
+variable "private_dns_zone_id" {
+  description = "The ID of the private DNS zone"
+  type        = string
+  default     = ""
+}
+
 variable "admin_enabled" {
   description = "Enable admin access"
   type        = bool

@@ -22,5 +22,10 @@ resource "azurerm_private_endpoint" "acr_private_endpoint" {
     subresource_names              = ["registry"]
   }
 
+  private_dns_zone_group {
+    name                 = "default"
+    private_dns_zone_ids = [var.private_dns_zone_id]
+  }
+
   tags = var.tags
 }

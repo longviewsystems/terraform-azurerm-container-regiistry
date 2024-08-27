@@ -40,6 +40,8 @@ module "acr_test" {
   resource_group_name = azurerm_resource_group.test_rg.name
   location            = azurerm_resource_group.test_rg.location
   acr_name            = module.naming.container_registry.name_unique
+  public_network_access_enabled = false
+  private_dns_zone_id = azurerm_private_dns_zone.acr_private_dns.id
   sku                 = "Premium"
   virtual_network_subnet_id = azurerm_subnet.test_subnet.id
   tags                = {
