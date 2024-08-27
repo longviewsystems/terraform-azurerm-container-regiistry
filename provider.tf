@@ -1,18 +1,9 @@
 terraform {
-  required_version = ">= 1.0.8"
-  # backend "azurerm" {}
-
+  required_version = ">= 1.3.0"
   required_providers {
     azurerm = {
-      version = "~> 2.90.0"
+      source  = "hashicorp/azurerm"
+      version = ">=3.0.0, <4.0.0"
     }
-    #azuread = {
-     # version = "~> 1.6.0"
-    #}
   }
-}
-
-provider "azurerm" {
-  features {}
-  skip_provider_registration = true
 }

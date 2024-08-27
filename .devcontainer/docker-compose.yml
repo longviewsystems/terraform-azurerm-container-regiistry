@@ -6,8 +6,7 @@
   version: '3.8'
   services:
     tfdev:
-      image: longviewsystems/terraform-dev:latest
-      #image: 'longviewsystems/terraform-dev:0.0.9-beta.1'
+      image: longviewsystems/terraform-dev:2.3.0
       user: vscode
 
       # labels:

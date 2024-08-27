@@ -12,7 +12,7 @@ func TestTerraformAzureACR(t *testing.T) {
 
 	// Define Terraform options
 	terraformOptions := &terraform.Options{
-		TerraformDir: "../../terraform-azurerm-container-registry",
+		TerraformDir: "./fixtures",
 	}
 
 	// Clean up resources with "terraform destroy" at the end of the test.

@@ -1,67 +1,44 @@
-variable "subscription_id" {
-  description = "ID of the Azure subscription where Terraform should provision resource. Use azure cli command to query id: az account show --query id"
+variable "resource_group_name" {
   type        = string
-  default     = "7f3c4fcf-626c-49e0-9160-a756147abaa4"
-}
-
-variable "tenant_id" {
-  description = "Azure AD tenant ID where needed by Terraform in order to authenticate with service principal. Use azure cli command to query id: az account show --query tenantId"
-  type        = string
-  default     = "fd6fb306-2acd-4fae-a721-c8f5714b622e"
-}
-
-variable "tags" {
-  description = "Tags to be applied to the resources"
-  type        = map(string)
-  default     = {}
+  description = "The name of the resource group in which to create the Azure Container Registry."
 }
 
 variable "location" {
-  description = "Azure region where resources should be provisioned"
   type        = string
-  default     = "westeurope"
-}
-variable "azure_resource_group" {
-  description = "Name of the Azure resource group where resources will be provisioned"
-  type        = string
-  default     = "lvs-dev"
-}
-variable "acr_private_endpoint_vnet_name" {
-  description = "Name of the virtual network where ACR private endpoint should be provisioned"
-  type        = string
-  default     = "lvs-dev-vnet"
-}
-
-variable "acr_private_endpoint_vnet_cidr" {
-  description = "CIDR of the virtual network where ACR private endpoint should be provisioned"
-  type        = string
-  default     = "10.0.0.0/16"
-}
-
-variable "acr_private_endpoint_subnet_name" {
-  description = "Name of the Azure subnet for ACR"
-  type        = string
-  default     = "lvs-dev-subnet"
-}
-variable "acr_private_endpoint_subnet_cidr" {
-  description = "CIDR of the subnet where ACR private endpoint should be provisioned"
-  type        = string
-  default     = "10.0.1.0/24"
+  description = "The location where the resources will be created."
+  default     = "East US"
 }
 
 variable "acr_name" {
-  description = "Name of the Azure Container Registry"
   type        = string
-  default     = "lvsdevregistry"
+  description = "The name of the Azure Container Registry."
 }
 
-variable "acr_sku" {
-  description = "SKU of the Azure Container Registry"
+variable "sku" {
   type        = string
+  description = "The SKU of the Azure Container Registry (Basic, Standard, Premium)."
   default     = "Premium"
+}
 
-  validation {
-    condition     = contains(["Premium"], var.acr_sku)
-    error_message = "Argument \"acr_sku\" must be either \"Premium\" in order to support private endpoints."
-  }
+variable "virtual_network_subnet_id" {
+  type        = string
+  description = "The ID of the subnet within which the private endpoint will be created."
+}
+
+variable "public_network_access_enabled" {
+  description = "Enable public network access"
+  type        = bool
+  default     = true
+}
+
+variable "admin_enabled" {
+  description = "Enable admin access"
+  type        = bool
+  default     = true
+}
+
+variable "tags" {
+  type        = map(string)
+  description = "A map of tags to assign to the resources."
+  default     = {}
 }
