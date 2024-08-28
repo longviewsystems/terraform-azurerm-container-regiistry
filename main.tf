@@ -11,7 +11,7 @@ resource "azurerm_container_registry" "acr" {
   #Depends on SKU
   retention_policy {  
     days = var.retention_policy_in_days
-    enabled = true
+    enabled = var.retention_policy_enabled
   }
   
   admin_enabled                 = var.admin_enabled
