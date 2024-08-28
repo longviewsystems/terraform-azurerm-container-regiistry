@@ -1,6 +1,10 @@
 resource "azurerm_container_registry" "acr" {
   ##checkov:skip=CKV_AZURE_165:Georeplication is not required in this version.
   ##checkov:skip=CKV_AZURE_233:Zone Redundancy is not required in this version.
+  ##checkov:skip=CKV_AZURE_164:Signing Policy is not required in this version.
+  ##checkov:skip=CKV_AZURE_137:Admin Account defaults to false.
+  ##checkov:skip=CKV_AZURE_237: Private endpoint is configured by this module.
+  
   name                = var.acr_name
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -8,7 +12,7 @@ resource "azurerm_container_registry" "acr" {
   
   quarantine_policy_enabled = var.enable_quarantine_policy
   
-  #Depends on SKU
+  #Depends on SKU type.  Must be Premium for this feature.
   retention_policy {  
     days = var.retention_policy_in_days
     enabled = var.retention_policy_enabled
