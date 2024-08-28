@@ -31,6 +31,24 @@ variable "public_network_access_enabled" {
   default     = true
 }
 
+variable "enable_quarantine_policy" {
+  description = "The container image quarantine feature in Azure Container Registry enables you to take control over the distribution of images by quarantining them until they’re verified."
+  type        = bool
+  default     = true
+}
+
+variable "retention_policy_in_days" {
+  type        = number
+  description = "The retention policy for untagged images in the registry."
+  default     = 7
+}
+
+variable "retention_policy_enabled" {
+  type        = bool
+  description = "Enable ACR retention policy"
+  default     = true
+}
+
 variable "private_dns_zone_id" {
   description = "The ID of the private DNS zone"
   type        = string

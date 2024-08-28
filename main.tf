@@ -1,12 +1,24 @@
 resource "azurerm_container_registry" "acr" {
+  ##checkov:skip=CKV_AZURE_165:Georeplication is not required in this version.
+  ##checkov:skip=CKV_AZURE_233:Zone Redundancy is not required in this version.
   name                = var.acr_name
   resource_group_name = var.resource_group_name
   location            = var.location
   sku                 = var.sku
-  tags                = var.tags
-
+  
+  quarantine_policy_enabled = var.enable_quarantine_policy
+  
+  #Depends on SKU
+  retention_policy {  
+    days = var.retention_policy_in_days
+    enabled = true
+  }
+  
   admin_enabled                 = var.admin_enabled
   public_network_access_enabled = var.public_network_access_enabled
+
+  tags                = var.tags
+
 }
 
 resource "azurerm_private_endpoint" "acr_private_endpoint" {

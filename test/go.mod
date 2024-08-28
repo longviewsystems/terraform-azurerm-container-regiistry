@@ -1,6 +1,6 @@
 module azure
 
-go 1.23
+go 1.21
 
 require (
 	cloud.google.com/go v0.110.0 // indirect
