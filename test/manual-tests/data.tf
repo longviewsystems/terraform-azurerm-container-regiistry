@@ -23,3 +23,6 @@ data "azurerm_subnet" "this_acr" {
   resource_group_name  = var.virtual_network_details.resource_group_name
 }
 
+data "local_file" "cloudinit" {
+  filename = "${path.module}/cloudinit.yaml"
+}

@@ -61,7 +61,7 @@ module "avm_res_keyvault_vault" {
 
   role_assignments = {
     deployment_user_secrets = { #give the deployment user access to secrets
-      role_definition_id_or_name = "Key Vault Secrets Officer"
+      role_definition_id_or_name = "Key Vault Administrator"
       principal_id               = data.azurerm_client_config.current.object_id
     }
   }
@@ -95,7 +95,7 @@ module "testvm" {
   admin_password                     = random_password.admin_password.result
   disable_password_authentication    = false
   enable_telemetry                   = false
-  encryption_at_host_enabled         = true
+  encryption_at_host_enabled         = false
   generate_admin_password_or_ssh_key = false
   location                           = data.azurerm_resource_group.this.location
   name                               = module.naming.virtual_machine.name_unique
@@ -103,6 +103,8 @@ module "testvm" {
   os_type                            = "Linux"
   sku_size                           = "Standard_D4_v5"
   zone                               = null
+
+  custom_data = base64encode(data.local_file.cloudinit.content)
 
   network_interfaces = {
     network_interface_1 = {
@@ -118,7 +120,7 @@ module "testvm" {
 
   os_disk = {
     caching              = "ReadWrite"
-    storage_account_type = "Premium_LRS"
+    storage_account_type = "StandardSSD_LRS"
   }
 
   source_image_reference = {
