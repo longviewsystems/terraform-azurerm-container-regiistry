@@ -20,6 +20,13 @@ resource "azurerm_subnet" "test_subnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
+resource "azurerm_subnet" "bastion_subnet" {
+  name                 = "AzureBastionSubnet"
+  resource_group_name  = azurerm_resource_group.test_rg.name
+  virtual_network_name = azurerm_virtual_network.test_vnet.name
+  address_prefixes     = ["10.0.2.0/24"]
+}
+
 # Create a Private DNS Zone for ACR
 resource "azurerm_private_dns_zone" "acr_private_dns" {
   name                = "privatelink.azurecr.io"
