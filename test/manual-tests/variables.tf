@@ -1,7 +1,13 @@
-variable "location" {
-  description = "The location/region where the resources will be created."
-  type        = string
-  default = "eastus"
+variable "virtual_network_details" {
+  description = "The details of the virtual network."
+  type = object({
+    vnet_name                = string
+    resource_group_name = string
+  })
+  default = {
+    vnet_name                =  "mod-test-vnet-nnma"
+    resource_group_name     = "mod-test-rg-nnma"
+  }
 }
 
 variable "tags" {
