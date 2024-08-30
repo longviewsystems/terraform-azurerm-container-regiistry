@@ -1,7 +1,7 @@
 # Create a Resource Group
 resource "azurerm_resource_group" "test_rg" {
   name     = module.naming.resource_group.name_unique
-  location = "East US"
+  location = var.location
 }
 
 # Create a Virtual Network

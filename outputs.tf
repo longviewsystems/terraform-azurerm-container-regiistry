@@ -9,6 +9,6 @@ output "acr_login_server" {
 }
 
 output "private_endpoint_id" {
-  value       = azurerm_private_endpoint.acr_private_endpoint.id
+  value       = azurerm_private_endpoint.acr_private_endpoint[0].id
   description = "The ID of the private endpoint."
 }
