@@ -1,3 +1,14 @@
+# [1.1.0](https://github.com/longviewsystems/terraform-azurerm-container-registry/compare/1.0.0...1.1.0) (2024-09-04)
+
+
+### Features
+
+* add bastion ([84a9d47](https://github.com/longviewsystems/terraform-azurerm-container-registry/commit/84a9d47de96a041504e2a3b37a9dc8cb89740a9f))
+* add cloud init to manual tests ([4e35aa6](https://github.com/longviewsystems/terraform-azurerm-container-registry/commit/4e35aa6e5d54fe7923ab2d76610cd8f92c1381b7))
+* add optional pe ([4f303df](https://github.com/longviewsystems/terraform-azurerm-container-registry/commit/4f303df8ca368675ded331e1daa59ad5c5a57a2f))
+* add resources fpr manual tests ([cc79e04](https://github.com/longviewsystems/terraform-azurerm-container-registry/commit/cc79e042e33941a8fc3a3e9d2c80b5140cca3891))
+* update tests ([ef0af29](https://github.com/longviewsystems/terraform-azurerm-container-registry/commit/ef0af2913f3f8748ab9c7791349e6373a76bc03f))
+
 # 1.0.0 (2024-08-28)
 
 
