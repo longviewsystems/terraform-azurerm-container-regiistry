@@ -32,7 +32,7 @@ variable sku {
 variable enable_quarantine_policy {
   description = "The container image quarantine feature in Azure Container Registry enables you to take control over the distribution of images by quarantining them until they’re verified."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable admin_enabled {
