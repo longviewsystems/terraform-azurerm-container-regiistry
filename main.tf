@@ -26,6 +26,7 @@ resource "azurerm_container_registry" "acr" {
 }
 
 resource "azurerm_private_endpoint" "acr_private_endpoint" {
+  count               = var.private_endpoint_enabled ? 1 : 0
   name                = "${var.acr_name}-pe"
   location            = var.location
   resource_group_name = var.resource_group_name

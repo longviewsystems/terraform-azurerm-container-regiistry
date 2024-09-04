@@ -1,7 +1,7 @@
 # Create a Resource Group
 resource "azurerm_resource_group" "test_rg" {
   name     = module.naming.resource_group.name_unique
-  location = "East US"
+  location = var.location
 }
 
 # Create a Virtual Network
@@ -18,6 +18,13 @@ resource "azurerm_subnet" "test_subnet" {
   resource_group_name  = azurerm_resource_group.test_rg.name
   virtual_network_name = azurerm_virtual_network.test_vnet.name
   address_prefixes     = ["10.0.1.0/24"]
+}
+
+resource "azurerm_subnet" "bastion_subnet" {
+  name                 = "AzureBastionSubnet"
+  resource_group_name  = azurerm_resource_group.test_rg.name
+  virtual_network_name = azurerm_virtual_network.test_vnet.name
+  address_prefixes     = ["10.0.2.0/24"]
 }
 
 # Create a Private DNS Zone for ACR
