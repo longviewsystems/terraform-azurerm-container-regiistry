@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/longviewsystems/terraform-azurerm-container-registry/compare/1.1.0...1.2.0) (2024-09-04)
+
+
+### Features
+
+* disable git quarentine ([550f4b2](https://github.com/longviewsystems/terraform-azurerm-container-registry/commit/550f4b2fff92ad1e7e514fac25f69c6eb5185eae))
+* disable quarantine ([79ae217](https://github.com/longviewsystems/terraform-azurerm-container-registry/commit/79ae21708e3dcc6aa7b7e1e2a34b440d55075418))
+
 # [1.1.0](https://github.com/longviewsystems/terraform-azurerm-container-registry/compare/1.0.0...1.1.0) (2024-09-04)
 
 
